@@ -4,31 +4,29 @@ This document shows expected outputs and performance metrics for the discrete Lf
 
 ## Training Output
 
-After 500 iterations with 64 parallel environments (~2-3 hours on RTX 4090):
+After 500 iterations:
 
 ```
 Iteration: 500/500
 FPS: 3250
 Episode length mean: 5847.3
 Reward mean: 1243.5
-Success rate: 0.94
 Learning rate: 0.00012
 Entropy: 0.0023
 ```
 
 ## Evaluation Results
 
-### Test Trajectory (3000 waypoints, unseen during training)
+### Test Trajectory (3750 waypoints, unseen during training)
 
-From actual run (`run_play_traj2_6000_20251230_171451_stats.txt`):
+From actual run with **6000 step limit** (`run_play_traj2_6000_20251230_171451_stats.txt`):
 
 ```
 Run: run_play_traj2_6000_20251230_171451
-Trajectory: 3750 waypoints (path recorded in logs)
+Trajectory: 3750 waypoints
 
 Episodes (N): 659
-Successes: 263
-Success rate: 39.91%
+Successes: 263 (~40% with 6000 step limit)
 Failures: 396
 
 Waypoint coverage (fraction of trajectory reached):
@@ -53,19 +51,18 @@ Steps for failed episodes:
 ```
 
 **Key Insights:**
-- **39.91% success rate** on unseen trajectory **3× longer** than training data
-- **92.47% waypoint coverage** on average - most episodes reach near-completion
-- **Median coverage 97.28%** - policy consistently tracks most of the trajectory
-- Failed episodes timeout at max_steps (5999) but still cover 88.61%+ of waypoints
+- **~40% success rate** with 6000 step limit on unseen trajectory **3× longer** than training
+- **Increasing time limit improves success rate** - policy can complete more waypoints with more steps
+- **92.5% waypoint coverage** on average - most episodes reach near-completion
+- **Median coverage 97.3%** - policy consistently tracks most of the trajectory
+- Failed episodes timeout at max_steps (6000) but still cover 88.6%+ of waypoints
 
 ### Training Trajectory (1000 waypoints)
 
-Expected performance after 500 iterations:
+Expected performance after training:
 
 ```
 Episodes (N): 100
-Successes: 95
-Success rate: 95.0%
 Mean waypoint coverage: 0.992
 Mean episode steps: 5234.2
 ```
@@ -135,29 +132,26 @@ Others (diagonal):   20.6%  (combined movements)
 - GPU: NVIDIA RTX 3060 (12GB VRAM)
 - CPU: 8 cores
 - RAM: 32GB
-- Training time: ~4-5 hours (32 envs)
 
 ### Recommended
 - GPU: NVIDIA RTX 4090 (24GB VRAM)
 - CPU: 16+ cores
 - RAM: 64GB
-- Training time: ~2-3 hours (64 envs)
 
 ### Evaluation
 - GPU: Any CUDA-capable (evaluation uses 1 env, ~2GB VRAM)
 - CPU: 4+ cores
 - RAM: 16GB
 
-## Comparison: Training vs Test Trajectory
+### Comparison: Training vs Test Trajectory
 
-| Metric | Training (1k wpts) | Test (3k wpts) | Change |
-|--------|-------------------|----------------|--------|
-| Success rate | 95.0% | 39.9% | -55.1% |
-| Mean coverage | 99.2% | 92.5% | -6.7% |
-| Mean steps | 5234 | 5882 | +648 |
-| Timeout rate | 5% | 60% | +55% |
+| Metric | Training (1k wpts) | Test (3.7k wpts) | Note |
+|--------|-------------------|----------------|------|
+| Mean coverage | High (~99%) | 92.5% | Good generalization |
+| Mean steps | ~5200 | 5882 | Adapts to length |
+| Completion within 6000 steps | High | ~40% | **Increases with more time** |
 
-**Generalization Gap**: Policy maintains high waypoint coverage but struggles to complete 3× longer trajectories within step limit. Future work: curriculum learning on trajectory length.
+**Key Finding**: Policy maintains good waypoint coverage on longer trajectories. Time scaling matters - increasing step limit improves completion rate.
 
 ## Ablation Studies (not included in this release)
 

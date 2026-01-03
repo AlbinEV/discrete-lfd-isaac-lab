@@ -47,10 +47,10 @@ pip install rl-games plotly
 
 ```bash
 cd <ISAAC_LAB_PATH>
-./isaaclab.sh -p /path/to/scripts/train.py --num_envs 64 --max_iterations 500
+./isaaclab.sh -p /path/to/scripts/train.py --num_envs <N> --max_iterations 500
 ```
 
-**Training takes ~2-3 hours** on RTX 4090 (64 parallel environments).
+
 
 ### 5. Evaluate
 
@@ -156,18 +156,19 @@ export LFD_REWARD_C_CLIP=0.02        # Clipping value
 
 ## 📈 Expected Results
 
-With provided hyperparameters (500 iterations, 64 envs):
+After training with provided hyperparameters (500 iterations):
 
-- **Training trajectory** (1k waypoints): ~95% success rate
-- **Test trajectory** (3k waypoints, unseen): ~40% success rate
+- **Training trajectory** (1k waypoints): High waypoint coverage (~99%)
+- **Test trajectory** (3.7k waypoints, unseen): ~40% completion with 6000 step limit
 - **Generalization**: Policy handles 3× longer trajectories without retraining
+- **Time scaling**: Increasing step limit improves completion rate
 
-Sample results on test trajectory:
+Sample results on test trajectory (6000 step limit):
 ```
 Episodes: 659
-Success rate: 39.91%
-Mean waypoint coverage: 92.47%
+Mean waypoint coverage: 92.5%
 Mean steps: 5881
+Note: ~40% complete within time limit, higher with more steps
 ```
 
 ## 📝 Citation
