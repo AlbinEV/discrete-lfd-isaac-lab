@@ -168,3 +168,17 @@ For research purposes, the full codebase includes:
 - IK controller tuning (Kp/Kd gains)
 
 Contact authors for access to extended analysis tools.
+
+---
+
+## About VTT
+
+This research was conducted in collaboration with **VTT Technical Research Centre of Finland Ltd.**, one of Europe's leading research organizations with 2,386 professionals and operations in 6 Finnish cities including Oulu.
+
+VTT's mission is to advance sustainable growth through science and technology, with expertise in:
+- Intelligent production and robotics
+- Industrial automation
+- Sustainable manufacturing solutions
+- Digital technologies
+
+Learn more: [www.vttresearch.com](https://www.vttresearch.com)

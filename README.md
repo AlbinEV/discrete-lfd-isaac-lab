@@ -180,9 +180,18 @@ If you use this environment in your research, please cite:
   author = {VTT Technical Research Centre of Finland},
   year = {2026},
   publisher = {GitHub},
-  url = {https://github.com/yourusername/repo}
+  url = {https://github.com/yourusername/repo},
+  note = {Developed in collaboration with VTT (Technical Research Centre of Finland), Oulu, Finland}
 }
 ```
+
+## 🏢 Acknowledgements
+
+This work was developed in collaboration with **VTT Technical Research Centre of Finland**, one of Europe's leading research organizations with over 2,300 professionals advancing sustainable solutions through science and technology.
+
+**VTT Oulu** is one of VTT's six research locations in Finland, specializing in intelligent production, robotics, and industrial automation research.
+
+More information: [www.vttresearch.com](https://www.vttresearch.com)
 
 ## 📄 License
 
