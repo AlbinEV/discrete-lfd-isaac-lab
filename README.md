@@ -180,7 +180,7 @@ If you use this environment in your research, please cite:
   author = {VTT Technical Research Centre of Finland},
   year = {2026},
   publisher = {GitHub},
-  url = {https://github.com/yourusername/repo},
+  url = {https://github.com/AlbinEV/discrete-lfd-isaac-lab},
   note = {Developed in collaboration with VTT (Technical Research Centre of Finland), Oulu, Finland}
 }
 ```
