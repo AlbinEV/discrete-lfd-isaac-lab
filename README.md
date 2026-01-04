@@ -175,11 +175,9 @@ Note: ~40% complete within time limit, higher with more steps
 
 ## 🎨 Trajectory Visualizations
 
-Interactive visualizations of the demonstration trajectories:
-- [Training trajectory (traj_1_shifted)](docs/trajectory_train.html) — 1,337 waypoints
-- [Test trajectory (traj_2_shifted)](docs/trajectory_test.html) — 3,750 waypoints
-
-Each visualization includes 3D view, XY projection, and height profile.
+Visual representations of the demonstration trajectories with 3D view, XY projection, and height profile:
+- [Training trajectory (traj_1_shifted)](docs/trajectory_train_combined.svg) — 1,337 waypoints
+- [Test trajectory (traj_2_shifted)](docs/trajectory_test_combined.svg) — 3,750 waypoints
 
 ## 📝 Citation
 
