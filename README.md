@@ -171,14 +171,6 @@ Mean steps: 5881
 Note: ~40% complete within time limit, higher with more steps
 ```
 
-
-
-## 🎨 Trajectory Visualizations
-
-Visual representations of the demonstration trajectories with 3D view, XY projection, and height profile:
-- [Training trajectory (traj_1_shifted)](docs/trajectory_train_combined.svg) — 1,337 waypoints
-- [Test trajectory (traj_2_shifted)](docs/trajectory_test_combined.svg) — 3,750 waypoints
-
 ## 📝 Citation
 
 If you use this environment in your research, please cite:
@@ -217,4 +209,4 @@ This is a research prototype. For questions or issues:
 
 - [Isaac Lab](https://github.com/isaac-sim/IsaacLab) - Robot learning framework
 - [RL-Games](https://github.com/Denys88/rl_games) - RL training library
-- Paper: *(add publication link when available)*
+- Paper: *(coming soon)*
