@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Trajectory — traj_1_shifted</title>
+  <style>
+    :root {
+      --bg: #f5f6fa;
+      --panel: #ffffff;
+      --text: #1e1e1e;
+      --muted: #5f5f64;
+      --border: #d8d8de;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-weight: 700;
+      letter-spacing: 0.1px;
+      font-size: 28px;
+    }
+    .lead {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .card h2 {
+      margin: 0 0 4px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .card .meta {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .img-frame {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+    }
+    .img-frame img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+    .full-width {
+      grid-column: 1 / -1;
+    }
+    .stats {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+    .stat {
+      flex: 1;
+      min-width: 140px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <h1>Training Trajectory</h1>
+  <p class="lead">
+    Demonstration trajectory used for training (<code>traj_1_shifted.json</code>). 
+    Visualized with 3D view and 2D projections (XY plane and height profile).
+  </p>
+
+  <div class="card full-width" style="margin-bottom: 24px;">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Waypoints</div>
+        <div class="stat-value">1,337</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Type</div>
+        <div class="stat-value">Training</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Format</div>
+        <div class="stat-value">JSON</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card full-width">
+      <h2>3D Trajectory</h2>
+      <p class="meta">Full spatial path with start (▲) and end (■) markers</p>
+      <div class="img-frame">
+        <img src="train_3d.svg" alt="Training trajectory 3D view" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>XY Projection</h2>
+      <p class="meta">Top-down view (horizontal plane)</p>
+      <div class="img-frame">
+        <img src="train_xy.svg" alt="Training trajectory XY projection" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Height Profile</h2>
+      <p class="meta">Z-coordinate evolution (vertical movement)</p>
+      <div class="img-frame">
+        <img src="train_height.svg" alt="Training trajectory height profile" />
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Color Scale</h2>
+    <p class="meta">Waypoint index progression</p>
+    <div class="img-frame">
+      <img src="train_colorbar.svg" alt="Colorbar showing waypoint progression" />
+    </div>
+  </div>
+</body>
+</html>

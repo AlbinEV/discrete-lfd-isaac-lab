@@ -171,18 +171,28 @@ Mean steps: 5881
 Note: ~40% complete within time limit, higher with more steps
 ```
 
+
+
+## 🎨 Trajectory Visualizations
+
+Interactive visualizations of the demonstration trajectories:
+- [Training trajectory (traj_1_shifted)](docs/trajectory_train.html) — 1,337 waypoints
+- [Test trajectory (traj_2_shifted)](docs/trajectory_test.html) — 3,750 waypoints
+
+Each visualization includes 3D view, XY projection, and height profile.
+
 ## 📝 Citation
 
 If you use this environment in your research, please cite:
 
 ```bibtex
-@software{vtt_rl_discrete_lfd_2026,
+@software{discrete_lfd_isaac_lab_2026,
   title = {Discrete Action Space Learning from Demonstration for Robotic Polishing},
-  author = {VTT Technical Research Centre of Finland},
+  author = {Bajrami, Albin},
+  institution = {VTT Technical Research Centre of Finland and Università Politecnica delle Marche},
   year = {2026},
   publisher = {GitHub},
-  url = {https://github.com/AlbinEV/discrete-lfd-isaac-lab},
-  note = {Developed in collaboration with VTT (Technical Research Centre of Finland), Oulu, Finland}
+  url = {https://github.com/AlbinEV/discrete-lfd-isaac-lab}
 }
 ```
 
