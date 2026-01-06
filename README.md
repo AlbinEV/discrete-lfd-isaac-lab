@@ -64,6 +64,8 @@ cd <ISAAC_LAB_PATH>
 
 ### 6. Visualize Trajectory
 
+![](docs/traj1.png)
+
 ```bash
 python scripts/visualize_trajectory.py examples/traj_1_shifted.json -o traj_1.html
 # Open traj_1.html in browser
